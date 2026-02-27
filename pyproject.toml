@@ -17,6 +17,7 @@ dependencies = [
     "langchain-huggingface>=1.2.0",
     "langchain-openai>=1.1.10",
     "langchain-qdrant>=1.1.0",
+    "psycopg2>=2.9.11",
     "pymupdf>=1.27.1",
     "pypdf>=6.7.4",
     "python-dotenv>=1.2.1",
