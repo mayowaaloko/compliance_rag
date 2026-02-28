@@ -18,7 +18,6 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 
 # ---- CONSOLE HANDLER ----------------------------------------
-# Only shows INFO and above in the terminal — keeps it clean
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(formatter)

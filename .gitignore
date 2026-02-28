@@ -208,7 +208,8 @@ __marimo__/
 
 # Folders
 documents/
-
-
-
+frontend/
+src/
+api.py
 compliance_rag_notebook.ipynb
+main.py

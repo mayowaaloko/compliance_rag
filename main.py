@@ -17,10 +17,6 @@ from src.rag import rag_query
 logger = get_logger(__name__)
 
 
-# ============================================================
-# STARTUP — runs once when the app starts
-# ============================================================
-
 # 1. Init Postgres
 logger.info("Initializing Postgres...")
 init_db()
@@ -37,7 +33,7 @@ logger.info(f"Loaded {len(doc)} pages total")
 logger.info("Chunking documents...")
 chunks = chunk_documents(doc)
 
-# 4. Ingest into Qdrant (skips if collection already exists)
+# 4. Ingest into Qdrant
 logger.info("Setting up Qdrant...")
 qdrant_store = qdrant_ingest(chunks)
 if qdrant_store is None:
@@ -63,7 +59,7 @@ logger.info("All systems ready.")
 
 
 # ============================================================
-# QUERY — call this per user request
+# QUERY
 # ============================================================
 def query(question: str, session_id: str):
     """
@@ -83,7 +79,7 @@ def query(question: str, session_id: str):
 
 
 # ============================================================
-# ENTRY POINT — for local testing only
+# ENTRY POINT
 # ============================================================
 if __name__ == "__main__":
     print("\nCompliance RAG ready. Type 'quit' to exit.\n")

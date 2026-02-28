@@ -65,7 +65,7 @@ def contextualize_question(
     return standalone
 
 
-# ---- MAIN RAG FUNCTION --------------------------------------
+# ---- RAG FUNCTION --------------------------------------
 def rag_query(
     question: str,
     session_id: str,
@@ -75,12 +75,12 @@ def rag_query(
 ) -> Optional[ComplianceAnswer]:
     """
     Full RAG pipeline:
-    1. Load chat history from SQLite
+    1. Load chat history from Postgres
     2. Contextualize question
     3. Retrieve + rerank chunks
     4. Build prompt with context and history
     5. Get structured answer from LLM
-    6. Save to SQLite
+    6. Save to Postgres
     7. Return ComplianceAnswer object
     """
     try:
